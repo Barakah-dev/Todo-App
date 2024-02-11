@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    padding: 0;
+  }
+  .container{
+  
+  }
+  .heading{
+    text-align:  center;
+    background-color: #000;
+    padding: 20px;
+    color: azure;
+  }
+  h2{
+    
+  }
+  .input-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .title-container, .btn{
+    margin: 20px 0 10px;
+  }
+  .desc-container{
+    
+  }
+  label{
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  #title, #desc{
+    width: 235px;
+    padding: 10px;
+    font-size: 15px;
+  }
+  .btn-submit{
+    width: 257px;
+    background-color: rgb(15, 98, 9);;
+    color: azure;
+    padding: 10px;
+    border: none;
+  }
+  .btn:hover{
+    background-color: rgb(65, 60, 60);
+  }
+  .btn:active{
+    background-color: rgb(102, 189, 96);
+  }
+  .mt-20{
+    margin-top: 20px;
+  }
+  .todos{
+    display: flex;
+    flex-direction: column;
+    background-color: bisque;
+  }
+  .todo-box{
+    min-width: 300px;
+    min-height: 250px;
+  }
+  ol{
+    list-style-type: none;
+  }
+  li{
+    /* border:  1px solid black; */
+    background-color: brown;
+    margin: 0 40px 5px 0;
+    padding: 10px 7px;
+    
+  }
+  p{
+    color: #ea9d03;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  
+  span{
+    color: #9e8551;
+    margin-right: 90px;
+  }
+  button{
+    border: none;
+    padding: 5px;
+  }
+  .edit-btn{
+    background-color: bisque;
+    margin-right: 5px;
+  }
+  .delete-btn{
+    background-color: red;
+    color: white;
+  }

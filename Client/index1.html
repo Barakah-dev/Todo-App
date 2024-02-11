@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <h1>ToDo Application</h1>
+    </div>
+    <div class="input-container">
+      <div class="title-container">
+        <label for="title">Title</label>
+        <input type="text" name="title" placeholder="Enter a title" id="title">
+      </div>
+
+      <div class="desc-container">
+        <label for="description">Description</label>
+        <textarea name="description" placeholder="Description" id="desc" cols="30" rows="10"></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit" >Save</button>
+      <!-- <button type="submit" class="btn" id="btn" onclick="saveTodo()">Save</button> -->
+
+      <div class="input-container mt-20">
+        <div class="todo-box todos">
+          <!-- <ol class="todo-list" id="todos-list"></ol> -->
+          <ol class="todo-list"></ol>
+        </div>
+      </div>
+      
+    </div>    
+  </div>
+</body>
+</html>

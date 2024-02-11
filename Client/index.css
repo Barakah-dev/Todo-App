@@ -1,0 +1,116 @@
+.todo-header-div {
+  display: block;
+  text-align: center;
+  align-items: center;
+}
+
+.todo-header {
+  background-color: azure;
+  color: #000;
+  padding: 1em;
+  font-size: 32px;
+}
+
+body {
+  background-color: #3f3f3f;
+}
+
+/* .center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+} */
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  width: 30%;
+  margin-bottom: 12px;
+  padding: 12px;
+}
+
+.desc {
+  width: 30%;
+  margin-bottom: 12px;
+  padding: 12px;
+}
+
+label {
+  color: #fff;
+  text-align: left !important;
+  margin-bottom: 4px;
+}
+
+.btn-submit {
+  background-color: azure;
+  width: 33%;
+  padding: 12px;
+  border: 0px;
+  border-radius: 4px;
+}
+
+.btn-submit:hover {
+  background-color: #6dc979;
+  
+}
+button:hover{
+  transition:  all .5s ease-out;
+  transform: scale(1.2);
+}
+
+.btn-submit:active {
+  background-color: #11aa22;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+  background-color: bisque;
+}
+
+.todo-box {
+  min-width: 300px;
+  min-height: 250px;
+}
+
+ol {
+  list-style-type: none;
+}
+
+li {
+  /* border: 1px solid cyan; */
+  background-color: brown;
+  margin: 0 40px 4px 0;
+  padding: 10px 8px;
+  /* TRBL */
+}
+
+p {
+  color: #ea9d03;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+span {
+  color: #9e8551;
+  margin-right: 40px;
+}
+.edit-btn{
+  background-color: bisque;
+  margin-right: 5px;
+}
+.delete-btn{
+  background-color: red;
+  color: white;
+}
