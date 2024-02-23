@@ -38,7 +38,7 @@ public class TodoController : ControllerBase
 
         _todos.Add(newTodoItem);
         return Ok(newTodoItem);
-    }
+    }   
 
     [HttpPut("update")]
     public IActionResult UpdateTodo([FromBody] UpdateTodoDTO updateTodoDTO)
@@ -95,7 +95,7 @@ public class TodoController : ControllerBase
     }
 
     private TodoEntity UpdateTodoEntity(UpdateTodoDTO updateTodoDTO)
-    {
+    {   
         var todo = _todos.FirstOrDefault(t => t.ID.ToString() == updateTodoDTO.id);
 
         if (todo is not null)
@@ -107,7 +107,7 @@ public class TodoController : ControllerBase
 
         return todo;
     }
-
+        
     private bool DeleteTodoEntity(string id)
     {
         var todoTodelete = _todos.FirstOrDefault(t => t.ID.ToString() == id);

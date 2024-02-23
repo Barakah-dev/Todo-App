@@ -41,23 +41,21 @@ const createTodo = async () => {
         descriptionElement.value = '';
     }
     
-    if (todo.title) {
-        //Make API call to perform create
-        try {
-            const createResponse = await fetch(`${baseURL}/todo/create`, {
-                method: 'POST',
-                body: JSON.stringify(todo),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-            const createResponseBody = await createResponse.json();
-            todoList.push(todo);
-            await listTodos();
-            console.log(createResponseBody);
-        } catch (error) {
-            console.error(error);
-        }
+    
+    //Make API call to perform create
+    try {
+        const createResponse = await fetch(`${baseURL}/todo/create`, {
+            method: 'POST',
+            body: JSON.stringify(todo),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        const createResponseBody = await createResponse.json();
+        await listTodos();
+        console.log(createResponseBody);
+    } catch (error) {
+        console.error(error);
     }
 
     // if(todo.title) {
@@ -135,8 +133,6 @@ const updateTodo = async () => {
         })
     });
 
-    console.log(todoToUpdate);
-
     // Make API call to perform update
     try 
     {
@@ -147,20 +143,18 @@ const updateTodo = async () => {
                 'Content-Type': 'application/json'
             }
         });
-        const responseBody = await updateResponse.json();
+        const responseBody = await updateResponse;
         await listTodos();
         console.log(responseBody);
-    } catch (error) {
+    }
+    catch (error) {
         console.error(error);
     }
 };
 
 function editTodoItem(todoLiElement) {
-    // console.log('Todo item clicked ', el);
     const titleElement = document.getElementById("title");
     const descriptionElement = document.getElementById("description");
-
-    // titleElement.value = 
 
     todoLiElement.childNodes.forEach((child) => {
         if(child.id === 'todo_id') {
@@ -200,7 +194,6 @@ const listTodos = async () => {
     }
 
     todoBoxQueryResult[0].removeChild(todosQueryResult[0]);
-
 
 
     const todoListElement = document.createElement('ol');
@@ -249,44 +242,31 @@ const listTodos = async () => {
     todoBoxQueryResult[0].appendChild(todoListElement);
 }
 
-// function titleChanged(e) {
-//     const titleElementQueryResult = document.querySelectorAll("#title");
-
-//     console.log(titleElementQueryResult);
-    
-// }
-
-function deleteTodoItem(todoLiElement) {
-    // Find the index of the todo item in the todoList array
-    const index = todoList.findIndex(todo => todo.title === todoLiElement.titleEl);
-    
-    // Remove the todo item from the todoList array
-    // if (index !== -1) {
-    //   todoList.splice(index, 1);
-    // }
+const deleteTodoItem = async (todoLiElement) => {
+    let todo_id = '';
   
-    // // Remove the todoLiElement from the DOM
-    // todoLiElement.remove();
-  
-    initiateDelete();
-  };
-  
-  //Make an API call to initiate delete
-  const initiateDelete = async () => {
-    try
-      {
-        const deleteResponse = await fetch(`${baseURL}/todo/delete`, {
-          method: 'DELETE'
-        });
-        const deleteResponseBody = await deleteResponse.json();
-        todoList.push(toDo)
-        await listTodos();
-        console.log(deleteResponseBody);
-      } catch (error) {
-        console.error(error);
+    todoLiElement.childNodes.forEach(child => {
+      if (child.id === "todo_id") {
+        todo_id = child.innerHTML;
       }
-  }
+    });
   
+    // Make an API call to initiate delete
+    try {
+      const deleteResponse = await fetch(`${baseURL}/todo/delete/${todo_id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+      await listTodos();
+      console.log(deleteResponse);
+    } 
+    catch (error) {
+      console.error(error);
+    }
+  }
+
 
 
 setTimeout(async () => {
@@ -299,7 +279,8 @@ setTimeout(async () => {
     try 
     {
         await listTodos();
-    } catch(error) {
+    }
+    catch(error) {
         console.error(error.message)
     }
     

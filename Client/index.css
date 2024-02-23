@@ -15,14 +15,6 @@ body {
   background-color: #3f3f3f;
 }
 
-/* .center-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 50%;
-} */
-
 .input-container {
   display: flex;
   flex-direction: column;
@@ -61,8 +53,8 @@ label {
   
 }
 button:hover{
-  transition:  all .5s ease-out;
-  transform: scale(1.2);
+  transition:  all .2s ease-out;
+  transform: scale(1.1);
 }
 
 .btn-submit:active {
@@ -89,11 +81,9 @@ ol {
 }
 
 li {
-  /* border: 1px solid cyan; */
   background-color: brown;
   margin: 0 40px 4px 0;
   padding: 10px 8px;
-  /* TRBL */
 }
 
 p {
@@ -109,8 +99,10 @@ span {
 .edit-btn{
   background-color: bisque;
   margin-right: 5px;
+  border: none;
 }
 .delete-btn{
   background-color: red;
   color: white;
+  border: none;
 }
